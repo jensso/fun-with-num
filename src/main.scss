@@ -1,0 +1,111 @@
+body {
+  #root {
+  #jso_luckyNumbers {
+    border-radius: 2vw 0 2vw;
+    box-shadow: 1vw 2vw 3vw grey;
+    display: flex;
+    justify-content:space-around;
+
+      #quote {
+      width: 44%;
+      border-radius: 2vw 0;
+      box-shadow: 1vw 2vw 3vw grey;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+        p {
+          border-radius: 2vw 0;
+          box-shadow: 1vw 2vw 3vw grey;
+          padding: 2vw;
+          margin: 1vw;
+          &:nth-of-type(2) {
+            transform: rotate(15deg);
+            color: gold !important;
+            opacity: 0.8;
+          }
+        }
+      }
+      #lottery {
+        margin: 2vw 1vw;
+        width: 45%;
+        border-radius: 2vw 0;
+        box-shadow: 1vw 2vw 3vw grey;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        #winner {
+          width: 80%;
+          text-align: center;
+          border: 0.2vw dashed gold;
+          border-radius: 0 2vw;
+          box-shadow: 0.5vw 0.5vw 0.5vw silver;
+          margin: 1vw auto;
+          padding: 1vw;
+          color: gold;
+          text-shadow: 0.2vw 0.4vw 0.6vw gold;
+          text-shadow: 0.1vw 0.1vw 0.1vw white;
+          background: black;
+        }
+        #looser {
+          width: 80%;
+          text-align: center;
+          border: 0.2vw solid brown;
+          border-radius: 0 2vw;
+          box-shadow: 0.5vw 0.5vw 0.5vw grey;
+          margin: 1vw auto;
+          padding: 1vw;
+          color: silver;
+          text-shadow: 0.2vw 0.4vw 0.6vw grey;
+          text-shadow: 0.1vw 0.1vw 0.1vw white;
+          background: olive;
+        }
+
+        p {
+          width: 80%;
+          text-align: center;
+          border: 0.2vw solid olive;
+          border-radius: 1vw;
+          box-shadow: 0.5vw 0.5vw 0.5vw grey;
+          margin: 0.5vw auto;
+          padding: 1vw;
+          color: olive;
+          text-shadow: 0.2vw 0.4vw 0.5vw grey;
+          text-shadow: 0.1vw 0.1vw 0.1vw black;
+          background: silver;
+
+        button {
+          width: 5vw;
+          height: 5vw;
+          margin: 1vw;
+          padding: 1vw;
+          background: olive;
+          border: 0.2vw solid brown;
+          box-shadow: 0 0 1vw grey;
+          border-radius: 20vw;
+          &:hover {
+            cursor: pointer;
+            background: brown;
+            border: 0.2vw solid olive;
+            }
+            &:focus {
+            outline: none;
+            }
+            &:active {
+            border: 0.1vw solid gold;
+            }
+        }
+        span {
+          font-family: monospace;
+          background: white;
+          color: red;
+          margin: 0.2vw;
+          padding: 0.4vw;
+          border-style: inset;
+          border: 0.1vw solid red;
+        }
+      }
+    }
+  }
+}
+}
