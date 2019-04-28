@@ -5,8 +5,11 @@ export class LuckyNumbers extends React.Component {
     super(props);
     this.state = ({
       clicked: false,
-    }); // this.state ends
-  } // constructor ends
+      random1: 0,
+      random2:0,
+      random3: 0
+    });
+  }
 
   handleClick(ev) {
 
@@ -48,41 +51,29 @@ export class LuckyNumbers extends React.Component {
         winner: false,
       });
   }
-  render() {
 
+  render() {
     return (
       <React.Fragment>
-      <div className="container">
-        <h2 className="lead mx-2 p-2">Have Fun with Numbers</h2>
-      </div>
-      <div id="jso_luckyNumbers" className="jumbotron m-1 p-2">
-        <div id="quote">
-          <p className="bg-dark text-light">
-          „Life is not a problem to be solved, but a reality to be experienced.“
-          <br />Søren Kierkegaard (*1813 - †1855)
-          </p>
-          {this.state.clicked && <p className="bg-dark text-light">
-          „Life is not a problem to be solved, but a reality to be experienced.“
-          <br />Søren Kierkegaard (*1813 - †1855)
-          </p>}
-        </div>
-
+      <h2>Have Fun with Numbers</h2>
+      <div id="luckyNumbers">
         <div id="lottery">
-          {this.state.clicked && <p>the lucky number is <span>{this.state.luckyNum}</span></p>}
-          {!this.state.clicked && <p>Run the lottery</p>}
-          <p><button onClick={this.handleClick.bind(this)}></button></p>
-
-            {this.state.clicked && <p>
-              - Win with every 7<br />
-              - Win with 3 equal digits<br />
-              - Win with your draw:<br />
+          <p>Win with every 7</p>
+          <p>Win with 3 equal digits</p>
+          <p>Win with your draw</p>
+        </div>
+        <div id="draw">
+          <button onClick={this.handleClick.bind(this)}>Draw your lucky number</button>
+          <div>
               <span id="random1">{this.state.random1/100}</span>
               <span id="random2">{this.state.random2/10}</span>
               <span id="random3">{this.state.random3}</span>
-            </p>}
+            </div>
+        </div>
+        {this.state.clicked && <p id="lucky">the lucky number is {this.state.luckyNum}</p>}
+
           {this.state.winner && this.state.clicked && <p id="winner">Hooray, a match<br/>YOU WIN!</p>}
           {!this.state.winner && this.state.clicked && <p id="looser">Sorry, no match<br/>YOU LOOSE!</p>}
-        </div>
       </div>
       </React.Fragment>
     )

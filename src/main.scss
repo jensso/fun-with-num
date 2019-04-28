@@ -1,111 +1,119 @@
 body {
   #root {
-  #jso_luckyNumbers {
-    border-radius: 2vw 0 2vw;
-    box-shadow: 1vw 2vw 3vw grey;
+    background-image: url(./strip2.jpg);
+    background-size: cover;
+    background-blend-mode: color-burn;
+    box-shadow: 0.1vw 0 1vw lime;
+
+    h2 {
+      color: red;
+      margin: 2vw;
+      transform: skewY(-2deg);
+      font-family: verdana;
+      text-shadow: 0.2vw 0.4vw grey;
+      text-shadow: 0.1vw 0.2vw silver;
+      text-align: left;
+    }
+  #luckyNumbers {
     display: flex;
-    justify-content:space-around;
-
-      #quote {
-      width: 44%;
-      border-radius: 2vw 0;
-      box-shadow: 1vw 2vw 3vw grey;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-
+    flex-direction: column;
+    #lottery {
+        border-radius: 2vw 0;
+        display: flex;
+        justify-content: space-around;
         p {
-          border-radius: 2vw 0;
-          box-shadow: 1vw 2vw 3vw grey;
-          padding: 2vw;
-          margin: 1vw;
-          &:nth-of-type(2) {
-            transform: rotate(15deg);
-            color: gold !important;
-            opacity: 0.8;
+          background: gold;
+          border: 0.2vw solid #000;
+          box-shadow: 1vw 0.4vw 2vw silver;
+          margin: 2.5vw;
+          padding: 2.5vw;
+          opacity: 0.7;
+          color: #050;
+          text-align: center;
+          text-emphasis-style: open;
+          font-size: 2vw;
           }
         }
       }
-      #lottery {
-        margin: 2vw 1vw;
-        width: 45%;
-        border-radius: 2vw 0;
-        box-shadow: 1vw 2vw 3vw grey;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+        #draw {
+          display: flex;
+          flex-direction: column;
+        button {
+          margin: 1vw auto;
+          padding: 2vw;
+          background: white;
+          border: 0.2vw solid brown;
+          box-shadow: 0 0 1vw grey;
+          border-radius: 2vw;
+          opacity: 0.9;
+          &:hover {
+            cursor: pointer;
+            box-shadow: 0.5vw 0.5vw 1.5vw white;
+            background: red;
+            color: white;
+            transition: all 1s linear;
+            }
+            &:focus {
+            outline: none;
+            }
+            &:active {
+            border: 0.4vw solid gold;
+            }
+        }
+          div {
+            display: flex;
+            justify-content: center;
+        span {
+          font-family: monospace;
+          font-size: 4vw;
+          background: white;
+          color: red;
+          margin: 0.5vw;
+          padding: 0.5vw 1vw;
+          border-style: inset;
+          border: 0.3vw solid red;
+          box-shadow: 0.5vw 0.5vw 1.5vw silver;
+
+          }
+          }
+        }
+        #lucky {
+          margin: 1.5vw auto;
+          padding: 1.5vw;
+          font-size: 3vw;
+          border-style: double;
+          color: lime;
+          background: green;
+          border-radius: 4vw;
+          opacity: 0.7;
+        }
+
         #winner {
           width: 80%;
           text-align: center;
-          border: 0.2vw dashed gold;
-          border-radius: 0 2vw;
+          border: 0.2vw solid lime;
+          border-radius: 2vw;
           box-shadow: 0.5vw 0.5vw 0.5vw silver;
           margin: 1vw auto;
           padding: 1vw;
-          color: gold;
+          color: lime;
           text-shadow: 0.2vw 0.4vw 0.6vw gold;
           text-shadow: 0.1vw 0.1vw 0.1vw white;
-          background: black;
+          background: green;
+          opacity: 0.7;
         }
         #looser {
-          width: 80%;
+          width: 50%;
           text-align: center;
           border: 0.2vw solid brown;
-          border-radius: 0 2vw;
+          border-radius: 2vw;
           box-shadow: 0.5vw 0.5vw 0.5vw grey;
           margin: 1vw auto;
           padding: 1vw;
           color: silver;
           text-shadow: 0.2vw 0.4vw 0.6vw grey;
           text-shadow: 0.1vw 0.1vw 0.1vw white;
-          background: olive;
-        }
-
-        p {
-          width: 80%;
-          text-align: center;
-          border: 0.2vw solid olive;
-          border-radius: 1vw;
-          box-shadow: 0.5vw 0.5vw 0.5vw grey;
-          margin: 0.5vw auto;
-          padding: 1vw;
-          color: olive;
-          text-shadow: 0.2vw 0.4vw 0.5vw grey;
-          text-shadow: 0.1vw 0.1vw 0.1vw black;
           background: silver;
-
-        button {
-          width: 5vw;
-          height: 5vw;
-          margin: 1vw;
-          padding: 1vw;
-          background: olive;
-          border: 0.2vw solid brown;
-          box-shadow: 0 0 1vw grey;
-          border-radius: 20vw;
-          &:hover {
-            cursor: pointer;
-            background: brown;
-            border: 0.2vw solid olive;
-            }
-            &:focus {
-            outline: none;
-            }
-            &:active {
-            border: 0.1vw solid gold;
-            }
-        }
-        span {
-          font-family: monospace;
-          background: white;
-          color: red;
-          margin: 0.2vw;
-          padding: 0.4vw;
-          border-style: inset;
-          border: 0.1vw solid red;
         }
       }
     }
-  }
-}
-}
