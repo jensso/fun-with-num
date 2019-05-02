@@ -1,81 +1,85 @@
 import React from 'react';
 
 export class LuckyNumbers extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = ({
       clicked: false,
-      random1: 0,
-      random2:0,
-      random3: 0
-    });
+      winner: false,
+      winnerText: '0',
+      pickedNum: '?',
+      luckyNum: '???',
+    })
   }
 
   handleClick(ev) {
-
-    this.state.luckyNum = Math.ceil(Math.random()*999);
-    const lucky = this.state.luckyNum;
-
-    this.state.random1 = Math.floor(Math.random()*10);
-    this.state.random2 = Math.floor(Math.random()*10);
-    this.state.random3 = Math.floor(Math.random()*10);
+    const lucky = Math.ceil(Math.random()*999);
+    const random1 = Math.floor(Math.random()*10);
+    const random2 = Math.floor(Math.random()*10);
+    const random3 = Math.floor(Math.random()*10);
     const tempArray = [];
-    tempArray.push(this.state.random1*100);
-    tempArray.push(this.state.random2*10);
-    tempArray.push(this.state.random3);
-    const tempNum = tempArray.reduce((sum,nr)=>{return sum + nr} ,0);
+    tempArray.push(random1*100);
+    tempArray.push(random2*10);
+    tempArray.push(random3);
+    const picked = tempArray.reduce((sum,nr)=>{return sum + nr} ,0);
 
-    this.state.luckyNum === tempNum
-    || this.state.luckyNum % 111 === 0
-    || this.state.luckyNum.toString().includes("7")
-       ?
-      this.setState({
-        clicked: true,
-        luckyNum: lucky,
-        random1: tempArray[0],
-        random2: tempArray[1],
-        random3: tempArray[2],
-        pickedNums: tempArray,
-        pickedNum: tempNum,
-        winner: true,
-      })
-      :
-      this.setState({
-        clicked: true,
-        luckyNum: lucky,
-        random1: tempArray[0],
-        random2: tempArray[1],
-        random3: tempArray[2],
-        pickedNums: tempArray,
-        pickedNum: tempNum,
-        winner: false,
-      });
+    switch (true) {
+      case lucky === picked:
+      console.log('You win the jackpot');
+      this.setState({winner: true,
+                    winnerText: 'the Jackpot'});
+
+      break;
+
+      case picked.toString().includes('7'):
+      console.log('You win 7$');
+      this.setState({winner: true,
+                    winnerText: '7$'});
+
+      break;
+
+      case picked % 111===0 :
+      console.log('You win 111$');
+      this.setState({winner: true,
+                    winnerText: '111$'});
+      break;
+      default: console.log('NO WIN');
+      this.setState({winner: false});
+
+      }
+    this.setState({
+      clicked: true,
+      random1: random1,
+      random2: random2,
+      random3: random3,
+      luckyNum: lucky,
+      pickedNum: picked,
+    })
   }
 
-  render() {
-    return (
-      <React.Fragment>
-      <h2>Have Fun with Numbers</h2>
-      <div id="luckyNumbers">
-        <div id="lottery">
-          <p>Win with every 7</p>
-          <p>Win with 3 equal digits</p>
-          <p>Win with your draw</p>
-        </div>
-        <div id="draw">
-          <button onClick={this.handleClick.bind(this)}>Draw your lucky number</button>
-          <div>
-              <span id="random1">{this.state.random1/100}</span>
-              <span id="random2">{this.state.random2/10}</span>
-              <span id="random3">{this.state.random3}</span>
-            </div>
-        </div>
-        {this.state.clicked && <p id="lucky">the lucky number is {this.state.luckyNum}</p>}
+      render() {
 
-          {this.state.winner && this.state.clicked && <p id="winner">Hooray, a match<br/>YOU WIN!</p>}
-          {!this.state.winner && this.state.clicked && <p id="looser">Sorry, no match<br/>YOU LOOSE!</p>}
-      </div>
-      </React.Fragment>
-    )
-  } // render ends
-}
+        return (
+        <React.Fragment>
+          <h2>Have Fun with Numbers</h2>
+          <div id="luckyNumbers">
+            <div id="lottery">
+              <p id="every">Win with every 7</p>
+              <p id="match">Win with your draw<br/><b>{this.state.luckyNum}</b></p>
+              <p id="equal">Win with 3 equal digits</p>
+            </div>
+            <div id="draw">
+              <button onClick={this.handleClick.bind(this)}>try it</button>
+              {this.state.clicked && <div>
+                  <span id="random1">{this.state.random1}</span>
+                  <span id="random2">{this.state.random2}</span>
+                  <span id="random3">{this.state.random3}</span>
+                </div>}
+                {this.state.winner && <p id="winner">YOU WIN {this.state.winnerText}</p>}
+            </div>
+          </div>
+          </React.Fragment>
+        )
+      }
+    }
