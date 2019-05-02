@@ -2,17 +2,16 @@ body #root {
   background-image: url(./strip2.jpg);
   background-size: cover;
   background-blend-mode: color-burn;
-  box-shadow: 0.2vw 0 1vw lime;
+  box-shadow: 0.5vw 0 1vw lime;
 }
 
 body #root h2 {
   color: red;
   margin: 2vw;
-  margin-top: 4vw;
   transform: skewY(-2deg);
   font-family: verdana;
-  text-shadow: 0.2vw 0.4vw grey;
-  text-shadow: 0.1vw 0.2vw silver;
+  text-shadow: 0.2vw 0.4vw black;
+  text-shadow: 0.1vw 0.2vw lime;
   text-align: left;
 }
 
@@ -43,6 +42,8 @@ body #root #luckyNumbers #lottery p {
 
 body #root #luckyNumbers #lottery p b {
   color: red;
+  text-shadow: 0.2vw 0.4vw grey;
+  text-shadow: 0.1vw 0.2vw lime;
 }
 
 body #root #draw {
@@ -70,12 +71,13 @@ body #root #draw p b {
 }
 
 body #root #draw button {
-  margin: 1vw auto;
+  margin: 1.5vw auto;
   padding: 2vw;
+  font-size: 1.5vw;
   background: white;
   border: 0.2vw solid brown;
   box-shadow: 0 0 1vw grey;
-  border-radius: 2vw;
+  border-radius: 2.5vw;
   opacity: 0.9;
 }
 
@@ -110,34 +112,4 @@ body #root #draw div span {
   border-style: inset;
   border: 0.3vw solid red;
   box-shadow: 0.5vw 0.5vw 1.5vw silver;
-}
-
-body #root #draw div .winner {
-  width: 80%;
-  text-align: center;
-  border: 0.2vw solid lime;
-  border-radius: 2vw;
-  box-shadow: 0.5vw 0.5vw 0.5vw silver;
-  margin: 1vw auto;
-  padding: 1vw;
-  color: lime;
-  text-shadow: 0.2vw 0.4vw 0.6vw gold;
-  text-shadow: 0.1vw 0.1vw 0.1vw white;
-  background: green;
-  opacity: 0.7;
-}
-
-body #root #looser {
-  width: 40%;
-  text-align: center;
-  border: 0.2vw solid brown;
-  border-radius: 2vw;
-  box-shadow: 0.5vw 0.5vw 0.5vw grey;
-  margin: 1vw auto;
-  padding: 1vw;
-  color: #050;
-  text-shadow: 0.2vw 0.4vw 0.6vw grey;
-  text-shadow: 0.1vw 0.1vw 0.1vw white;
-  background: silver;
-  opacity: 0.7;
 }

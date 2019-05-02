@@ -26,27 +26,27 @@ export class LuckyNumbers extends React.Component {
 
     switch (true) {
       case lucky === picked:
-      console.log('You win the jackpot');
+      document.getElementById('match').style.background = 'red';
       this.setState({winner: true,
                     winnerText: 'the Jackpot'});
-
       break;
 
       case picked.toString().includes('7'):
-      console.log('You win 7$');
+      document.getElementById('every').style.background = 'red';
       this.setState({winner: true,
                     winnerText: '7$'});
-
       break;
 
       case picked % 111===0 :
-      console.log('You win 111$');
+      document.getElementById('equal').style.background = 'red';
       this.setState({winner: true,
                     winnerText: '111$'});
       break;
-      default: console.log('NO WIN');
+      default:
+      document.getElementById('match').style.background = 'lime';
+      document.getElementById('every').style.background = 'lime';
+      document.getElementById('equal').style.background = 'lime';
       this.setState({winner: false});
-
       }
     this.setState({
       clicked: true,
